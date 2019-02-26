@@ -1,16 +1,16 @@
 #!/bin/bash
-sudo -s
+
 cd $HOME/openvpn-2.4.6
 
 wget --no-check-cert https://www.dropbox.com/s/nz4dyons6tlsbr4/etcinitdopenvpn.sh -O /etc/init.d/openvpn
-chmod +x /etc/init.d/openvpn
-update-rc.d openvpn defaults
+sudo chmod +x /etc/init.d/openvpn
+sudo update-rc.d openvpn defaults
 
 mkdir $HOME/clientside
 mkdir $HOME/serverside
 cd $HOME/serverside
 wget https://github.com/OpenVPN/easy-rsa/archive/master.zip
-unzip master.zip
+sudo unzip master.zip
 
 cd easy-rsa-master/easyrsa3
 
